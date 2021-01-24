@@ -1,0 +1,114 @@
+﻿@using www.doctormembrain.com.SharedClasses
+@model GuestBook_Dto
+@{
+    ViewData["Title"] = "GuestBook";
+}
+
+<div class="row">
+    <div class="col-md-2">
+        <img src="~/media/dr.jpg" style="float:right; max-height:100px;" />
+    </div>
+    <div class="col-md-10">
+        <h1 class="classname" style="color:#A4A4A4;">GuestBook</h1>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        @*@{
+            var data = new Dictionary<string, string>
+            {
+                { "type", "product" },
+                { "id", "" + Model.product_poco.id }
+            };
+        }*@
+        <form asp-controller="Doctor" asp-action="GuestBookPost" method="post">
+            <input type="hidden" id="date" name="date" value="@DateTime.Now.ToString("MM/dd/yyyy")" />
+            <span class="classname" style="font-size:15px;color:#A4A4A4;">
+                !!!!!ONLY uppercase, lowercase, numbers and some special characters!!!!!
+            </span><br />
+            <input type="text" placeholder="name..   (max: 50 char)" class="classname btn" style="text-align:left;border-color:#FFFFFF;font-size:15px;color:#A4A4A4;" id="name" name="name" />
+            <input type="text" placeholder="Country..   (max: 50 char)" class="classname btn" style="text-align:left;border-color:#FFFFFF;font-size:15px;color:#A4A4A4;" id="country" name="country" /><br /><br />
+            @*<input type="text" placeholder="Write here.." class="classname btn" style="border-color:#FFFFFF;font-size:25px;color:#A4A4A4;width:600px;" id="Content" name="content" /><br /><br />*@
+
+            <span class="classname remain" style="font-size:15px;color:#A4A4A4;">Remaining characters: 150</span><br />
+            <textarea id="content" class="classname btn" style="text-align:left;border-color:#FFFFFF;font-size:15px;color:#A4A4A4;direction: ltr;" cols="44" rows="1" name="content" placeholder="[try and keep it sensible]"></textarea><br /><br />
+
+
+
+            <input type="button" value="Submit your entry" class="classname btn sub" style="font-size:15px;color:#A4A4A4;" />
+        </form>
+        <br />
+        <br />
+        <br />
+        <span class="classname" style="font-weight: bold;font-size: 20px; color: #A4A4A4;">Entrys:</span><br />
+        <span class="classname" style="        font-size: 20px;
+    color: #A4A4A4;">. . . . . . . . . . . . . . . . . . . . . . .</span>
+        <br />
+        <br />
+        @foreach (Entry ent in Model.entrys)
+        {
+            <div>
+                <span class="classname" style="font-size:15px;color:#A4A4A4;">@ent.Date, From: @ent.Country</span><br />
+                <span class="classname" style="font-size: 20px; color: #A4A4A4;">@ent.Name:&nbsp;&nbsp;&nbsp;@ent.Content</span><br /><br />
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.sub').click(function fun() {
+            //alert('her1');
+            var date = $('#date').val();
+            var name = $('#name').val();
+            var country = $('#country').val();
+            var content = $('#content').val();
+
+            var path = "/Doctor/CheckEntry";
+            var data = {};
+            data.date = date;
+            data.name = name;
+            data.country = country;
+            data.content = content;
+
+            checkEntry_Ajax(path, data);
+        });
+        $('#content').keyup(function () {
+            setContent()
+        });
+    });
+    function setContent() {
+        var str = $('#content').val();
+        var res = 150 - str.length;
+        if (res >= 0)
+            $('.remain').text('Remaining characters: ' + res);
+        else {
+            $('#content').val(str.substring(0, 150));
+            $('.remain').text('Too many characters'/* + (res * -1)*/);
+        }
+    }
+    function checkEntry_Ajax(path, data_in) {
+        var data = data_in;//JSON.stringify(data_in)
+        $.ajax({
+            url: path,
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded",//"application/json; charset=utf-8",
+            dataType: "json",
+            data: data,
+            success: function (result) {
+                if (result.success) {
+                    $('form').submit();
+                }
+                else
+                    alert("Invalid characters?" +
+                        "\nEmpty field?" +
+                        "\nToo many characters?" +
+                        "\nUse ONLY upper, lower, numbers and . , ! ? ; : - )");
+            },
+            error: function (er) {
+                alert("Something went wrong, sorry!");
+                return -1;
+            }
+        });
+    }
+</script>

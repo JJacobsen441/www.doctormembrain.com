@@ -1,0 +1,24 @@
+/* Datebase */
+-- tilføj
+-- NuGet
+Microsoft.EntityFrameworkCore.Design
+(Microsoft.EntityFrameworkCore.Tools.DotNet)
+Microsoft.NETCore.App
+Npgsql.EntityFrameworkCore.PostgreSQL
+Npgsql.EntityFrameworkCore.PostgreSQL.Design
+
+-- .csproj
+<ItemGroup>
+<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.Dotnet" Version="2.0.3" />
+</ItemGroup>
+
+-- Console
+dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
+dotnet restore
+dotnet ef dbcontext scaffold "Host=127.0.0.1;Database=doctormembrain.com;Username=Joaki;Password=Nostromo2503" Npgsql.EntityFrameworkCore.PostgreSQL -o Models --force
+
+/* Identity */
+-- project -> Add -> Add Scaffolded Item
+-- Package Manager Console(Identity)
+Add-Migration CreateIdentitySchema -context ApplicationDbContext
+Update-Database -context ApplicationDbContext

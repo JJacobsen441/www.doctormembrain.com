@@ -1,0 +1,282 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Index</h1>*@
+
+<div align="center">
+    @*<div class="row">*@
+        <div class="xcol-md-2 hide_phone menu">
+            <ul class="xnavbar-nav xflex-grow-1 xmenu" style="list-style: none;">
+                @*<li><img src="~/media/top.jpg" style="padding-right:10px;padding-bottom:10px;width:100%" height="40" /></li>*@
+                <li class="xnav-item"><input type="button" style="border-color:#A4A4A4;margin-bottom:5px;" class="classname btn-nav btn-feat menu-item" value="Feature"></li>
+                <li class="xnav-item"><input type="button" style="border-color:#A4A4A4;margin-bottom:5px;" class="classname btn-nav btn-love menu-item" value="Love Classics"></li>
+                <li class="xnav-item"><input type="button" style="border-color:#A4A4A4;margin-bottom:5px;" class="classname btn-nav btn-top menu-item" value="Top 5"></li>
+                <li class="xnav-item"><input type="button" class="classname btn-nav btn-donate menu-item btn" style="background-color: #000000" value="Donate"></li>
+                <li class="xnav-item"></li>
+                <li class="xnav-item"><input type="button" class="classname btn-nav btn-about menu-item btn" style="background-color: #000000" value="About"></li>
+            </ul>
+            <img src="~/media/dr.jpg" style="padding-right: 10px; padding-top: 95px; width: 80%" xheight="40" />
+        </div>
+        @*<div style="width:850px">*@
+        <div class="container mycontainer removepaddingsides_phone">
+            <hr style="border-top: 1px dashed gray;" />
+            <div class="classname xmyoverlay reel xhide_phone"></div>
+            <div class="frame-top" style="padding-bottom:5px">
+                <img src="~/media/top.jpg" style="height:100%;width:100%;" />
+            </div>
+            <div class="vid_div">
+                <video style="width:100%;" class="video1" muted autoplay>
+                    <source src="~/media/From5.mp4" type="video/mp4" />
+                </video>
+                <video style="width:100%;" class="video2" muted autoplay loop>
+                    <source src="~/media/grain.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="myoverlay">
+
+                <div class="header" style="xpadding-top:170px;">
+                    <span class="classname letter1"></span>
+                    <div align="left" class="classname header-content"></div>
+                </div><br />
+                <div align="left" class="classname headline"></div><br />
+                <div align="left" class="classname content"></div>
+            </div>
+            <div class="col-md-12 donate hide_phone">
+                <div class="col-md-12 donate_header hide_phone">
+                    <span class="classname donate_letter1 hide_phone floatleft">Donate</span>
+                    <span class="classname donate_header_content floatleft"></span>
+                </div>
+                <div align="left" class="col-md-12 classname donate_content hide_phone">
+                    Donations made on this page, will all be used only for buying coffee. Gotta get back to work and make that coffee useful.<br /><br />
+                </div>
+                <div class="col-md-12 donate_radio" style="">
+                    <div class="row col-md-12">
+                        <div class="col-md-4">
+                            <input type="radio" name="don_radio" class="two radio floatleft" value="2" checked="checked" /><span class="classname floatleft" style="color:#A4A4A4;">. . . . . . . . 2 dollar</span><br />
+                            <input type="radio" name="don_radio" class="five radio floatleft" value="5" /><span class="classname floatleft" style="color:#A4A4A4;">. . . . . . . . 5 dollar</span><br />
+                            <input type="radio" name="don_radio" class="ten radio floatleft" value="10" /><span class="classname floatleft" style="color:#A4A4A4;">. . . . . . . . 10 dollar</span><br />
+                        </div>
+                        <div class="col-md-8 hide_phone">
+                            <span class="classname hide_phone" style="color:#A4A4A4;">[press here]</span><br />
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_donations" />
+                                <input type="hidden" name="business" value="admin@doctormembrain.com" />
+                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="hidden" name="amount" value="2" class="pay_amount" />
+                                <input class="floatleft_phone" style="width:50%" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                                <img class="xfloatleft" alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div style="font-size:25px;color:#A4A4A4;float:left;padding-top:20px;" align="left" class="col-md-12 classname hide_phone">
+                    Yours Truly, <br />
+                    Dr. Membrain.
+                </div>
+            </div>
+            <div class="col-md-12 donate">
+                <div class="col-md-12 donate_radio hide_only_phone">
+                    <div class="row col-md-12" style="height:150px;padding-left:45px;">
+                        <br /><br /><br />
+                        <ul style="list-style: none;">
+                            <li><input type="radio" name="pho_don_radio" class="two radio floatleft" style="xpadding-top:5px;" value="2" checked="checked" /> <span class="classname xfloatleft" style="xpadding-bottom:10px;color:#A4A4A4;">. . . . . . . . 2 dollar</span></li>
+                            <li><input type="radio" name="pho_don_radio" class="five radio floatleft" style="xpadding-top:5px;" value="5" /> <span class="classname xfloatleft" style="xpadding-bottom:10px;color:#A4A4A4;">. . . . . . . . 5 dollar</span><br /></li>
+                            <li><input type="radio" name="pho_don_radio" class="ten radio floatleft" style="xpadding-top:5px;" value="10" /> <span class="classname xfloatleft" style="xpadding-bottom:10px;color:#A4A4A4;">. . . . . . . . 10 dollar</span><br /></li>
+                            <li>
+                                <br />
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                    <input type="hidden" name="cmd" value="_donations" />
+                                    <input type="hidden" name="business" value="admin@doctormembrain.com" />
+                                    <input type="hidden" name="currency_code" value="USD" />
+                                    <input type="hidden" name="amount" value="2" class="pay_amount" />
+                                    <input class="floatleft_phone" style="width:100%" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 about" style="padding-top:120px;padding-left:100px;padding-right:100px">
+                <div class="col-md-12 about_header">
+                    <span class="classname about_letter1" style="color:#A4A4A4;line-height:1.0;float:left;font-size:50px"></span>
+                    <div style="font-size:25px;color:#A4A4A4;float:left" align="left" class="col-md-12 classname about_header_content"></div>
+                </div><br />
+                <div style="font-size:25px;color:#A4A4A4;float:left" align="left" class="col-md-12 classname about_content"></div>
+            </div>
+            <div class="frame-bottom">
+                <img src="~/media/bottom.jpg" style="height:100%;width:100%;" />
+            </div>
+
+            <input type="button" class="classname btn btn-next hide_phone" style="font-size:25px;color:#A4A4A4;margin-left:155px;" value="Next">
+            <input type="button" value="GuestBook" class="classname btn floatright hide_phone" style="font-size:25px;color:#A4A4A4;" onclick="location.href='@Url.Action("GuestBook", "Doctor", new { } )'" />
+            <input type="button" value="Wiki" class="classname btn floatright hide_phone" style="font-size:25px;color:#A4A4A4;" onclick="location.href='@Url.RouteUrl("wiki" )?wiki_id=7'" />
+            <input type="button" class="classname btn btn-next floatleft hide_only_phone" style="font-size:25px;color:#A4A4A4;padding-left:50px;padding-right:50px;" value="Next">
+            <input type="button" class="classname btn-nav btn-donate menu-item btn hide_only_phone floatright_phone" style="background-color: #000000" value="Donate">
+            @*<input type="button" class="classname btn hide_only_phone" style="font-size:25px;color:#A4A4A4;" value="Donation">*@
+
+            @*</div>*@
+            @*</div>*@
+        </div>
+    </div>
+<script type="text/javascript">
+    var genre = 'feature';
+    $(document).ready(function () {
+        //var video2 = document.getElementByClassName('video2')[0].offsetHeight;
+        //var frameBottom = document.getElementByClassName('frame-bottom')[0];
+        //frameBottom.style.marginTop = video2 + 5 + "px";
+        //var is_mobile = false;
+        //if ($('#some-element').css('display') == 'none') {
+        //    is_mobile = true;
+            //alert('mobile');
+        //}
+        //alert(is_mobile);
+        $('.about').hide();
+        $('.donate').hide();
+        $('.myoverlay').hide();
+        $('.reel').hide();
+        $('.video2').hide();
+        $('.video1').bind('ended', function () {
+            $('.reel').text('');
+            $('.letter1').text('');
+            $('.header-content').text('');
+            $('.headline').text('');
+            $('.content').text('');
+            $(this).hide();
+            $('.video2').show();
+            $('.reel').show();
+            $('.myoverlay').show();
+
+            if(genre == '')
+                storie();
+            if(genre == 'feature')
+                feature();
+            if(genre == 'love')
+                love();
+            if(genre == 'top5')
+                top5();
+        });
+        $('.btn-next').click(function () {
+            play('');
+        });
+        $('.btn-feat').click(function () {
+            play('feature');
+        });
+        $('.btn-love').click(function () {
+            play('love');
+        });
+        $('.btn-top').click(function () {
+            play('top5');
+        });
+        $('.btn-donate').click(function () {
+            donate();
+        });
+        $('.btn-about').click(function () {
+            about();
+        });
+        $('.radio').click(function () {
+            var val = $(this).val();
+            $('.pay_amount').val(val);
+            //alert(val);
+        });
+        
+    });
+    function storie() {
+        var path = "/Doctor/StorieRand";
+        //var data = { };
+        storie_Ajax(path);
+    }
+    function feature() {
+        var path = "/Doctor/StorieFeature";
+        //var data = { };
+        storie_Ajax(path);
+    }
+    function love() {
+        var path = "/Doctor/StorieLove";
+        //var data = { };
+        storie_Ajax(path);
+    }
+    function top5() {
+        var path = "/Doctor/StorieTop5";
+        //var data = { };
+        var letter1 = '';
+        var header_text = '';
+        
+        storie_Ajax(path);
+    }
+    function play(gen)
+    {
+        //alert('hep3');
+        genre = gen;
+        $('.reel').hide();
+        $('.myoverlay').hide();
+        $('.video2').hide();
+        $('.donate').hide();
+        $('.about').hide();
+        $('.video1').show();
+        $('.video1')[0].play()
+        //alert('hep4');
+    }
+    function about() {
+        $('.reel').hide();
+        $('.myoverlay').hide();
+        $('.donate').hide();
+        $('.about').show();
+        //$('.video2').hide();
+
+        var letter1 = 'About';
+        var header_text = '';
+        var content = '<br />Feature: This section wil present the most recent storie.<br />' +
+            'Love Classics: This section features love stories.<br />' +
+            'Top 5: This section features my top 5 selection.<br />' +
+            'Donate: Make a donation, via paypal.<br />' +
+            'About: This page.';
+        $('.about_letter1').text(letter1);
+        $('.about_header_content').text(header_text);
+        $('.about_content').html(content);
+    }
+    function donate() {
+        $('.reel').hide();
+        $('.myoverlay').hide();
+        $('.about').hide();
+        $('.donate').show();
+        //$('.video2').hide();
+
+        //var letter1 = 'D';
+        //var header_text = 'onate';
+        //var content = '<br />Donations made on this page, will all be used only for buying coffee. ' +
+        //    'Gotta get back to work and make that coffee useful.<br /><br />';// +
+            //'Yours Truly,<br />' +
+            //'Dr. Membrain';
+        //$('.donate_letter1').text(letter1);
+        //$('.donate_header_content').text(header_text);
+        //$('.donate_content').html(content);
+    }
+    function storie_Ajax(path, data_in) {
+        $.ajax({
+            url: path,
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            //data: JSON.stringify(data_in),
+            success: function (result) {
+                if (result.success) {
+                    var letter1 = result.header.substring(0,1);
+                    var header_text = result.header.substring(1);
+                    $('.reel').text('reel: ' + result.showing + '/' + result.count);
+                    $('.letter1').text(letter1);
+                    $('.header-content').text(header_text);
+                    $('.headline').text('\"' + result.headline + '\"');
+                    $('.content').text(result.content);
+                }
+                else
+                    alert("Error, sorry.");
+            },
+            error: function (er) {
+                alert("Error, sorry. " + er);
+            }
+        })
+    };
+</script>

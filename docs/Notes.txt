@@ -1,0 +1,89 @@
+modelBuilder.HasDefaultSchema("public");
+            modelBuilder.Entity<Shop>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Product>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Image>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Conversation>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Comment>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Collection>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Region>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Tag>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Folder>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Shoprating>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Category>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Employee>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Param>().Property(e => e.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<Value>().Property(e => e.Id).ValueGeneratedOnAdd();
+			
+public class Con 
+{
+    public static readonly IConfiguration _configuration;
+    static Con() 
+    {
+        _configuration = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        .Build();
+    }
+}
+
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+    if (!optionsBuilder.IsConfigured)
+    {
+        optionsBuilder.UseNpgsql(Con._configuration.GetConnectionString("MyConnection"));
+		
+        //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+        //optionsBuilder.UseNpgsql("Host=127.0.0.1;Database=centr.dk;Username=Joaki;Password=Nostromo2503");
+        //optionsBuilder.UseNpgsql(Configuration.GetConnectionString("MyConnection"));
+    }
+}
+
+
+' or '' '
+' or true '
+ds
+
+IUSR
+IIS_IUSRS
+
+ClientSecret:
+L1gT1sI5sN2uV5dU6nN4lI7mI3uV4hN0jK3bR1nF6yE5cR1rN6
+
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqnuZHmPywgYfRlX/n4Ry
+l3z4JOfDNfknmqWPOPtmFyVSleG1ZYLJDSR8yMn83FbIqejUnWfi9GW6DPkqtCHW
+xZ9hpuuIWmhNC4dI8IRwh0K1D7zaxd/EUPd2V/tUz5nAQyxsYMEzVSqaFrNZrUk2
+ZavebqPLBBbKkDt0O4THuyA/W6+42/mU1OAcEpOqohBoMhgkU8M1UV+h92UElIgE
+0Lio22KHrZuGXg4IumiglxNS+sg0xJ/c6eaofxsnKM0BE+TNF02vtIrD63eHwpyF
+AjVt1KNb2fpJXjjCh2VkOEwtnOcmNZscYHE74S93ksHx2kHXuF3ZK86Y/76+FKAH
+rQIDAQAB
+-----END PUBLIC KEY-----
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAqnuZHmPywgYfRlX/n4Ryl3z4JOfDNfknmqWPOPtmFyVSleG1
+ZYLJDSR8yMn83FbIqejUnWfi9GW6DPkqtCHWxZ9hpuuIWmhNC4dI8IRwh0K1D7za
+xd/EUPd2V/tUz5nAQyxsYMEzVSqaFrNZrUk2ZavebqPLBBbKkDt0O4THuyA/W6+4
+2/mU1OAcEpOqohBoMhgkU8M1UV+h92UElIgE0Lio22KHrZuGXg4IumiglxNS+sg0
+xJ/c6eaofxsnKM0BE+TNF02vtIrD63eHwpyFAjVt1KNb2fpJXjjCh2VkOEwtnOcm
+NZscYHE74S93ksHx2kHXuF3ZK86Y/76+FKAHrQIDAQABAoIBAGQ4mtAp06lKLhKM
+NeUR2MfDmKEhejn9idG46FSIPgD3WPBxqtDNLOJEA/OKAtOJVRfFn1AVpW8lalV8
+GSWiCv9MbfzR0+vKCxju4+s5AGoTxhtFW5sdq+wpPfIE91u/uC4FLIVIrqOvkrwr
+nVlog8kLW4zRT2TM/TIDMZZXvY78MZB7cQTW2TfNkRKCZwgpQy7X9826SmoufQbU
+bb1gSAsnNmmvmK1rpG8n4PAVt+yEVP+Pn+7dTEbJ8LIZK+ZdfnZhb54jMt+VYqZv
+myBcIR5Fj3r7XKQNbKMrVTyqGSglujOwQha2y/zMxFY0uTOformbS+PgZGoV7p3D
++3OwMAECgYEA+dxhpfZ/17SkHmGyIAwS6rHmZdgCTRUZm0PhSHAKzQcUlzYideyu
+ikUHu3kVrIndJfctfFycmog1ZIZITh1drar/5bzL0XNaYfhPZJUFBK1pwffFscJC
+zdJoQvr6Wj+QKsUw6dT4WM3BUX6HvYHLOP5+g/ESlsiEbUfkiy8dG60CgYEArqvu
+QQkGiGH3DZq+kRZZskJHMFebFasv9uQyfIwo0id7btFq3z2Vqveo1/TpkYd6l8FO
+YE7IA6lrofDgoQGlBdBaSD4b7pGdVzhHoSeu10Y7iU6H7+fZEtXNo2jwnJkvPbLS
++cIMN5k/QrTvnO8CriOScGBHiwLaYDaW1V/sHAECgYEAgMxYzct2dUQaActMnfZ7
+Xd4crU0fSorg60effs660puewp/WPcGm64HQDZTKVmmuxR5YpS28UHB8TXhnF1VN
+7/Mg/FVJH4v+AFiW3Htw3ctio+lMUGiaNS0ML9LecN0pPNLvduogpu5Rg+fcoxSg
+JJ4Tq4H+mhl9IjQYHKNJtvUCgYEAoMvfwfj4DZb5oomAwvmrSuGevU74koML3aGH
+JIa2kXgNNiAM3UPJQyFISr3IQtNQNOGcMCZ2FIDjd6nScAWej/KVGgorFnzwNjm2
+HxHz73NVHXqww1ZQy/kMnFDfp5mRFqBHfep36rrltJfyOSsB8aMHjPHlCoBu3cGD
+KxxptAECgYEAvaobUE0rxsGI8D8fzQ61TwfjwRLOuMbimurhFTkzLa7q4aaeylks
+N+zHGfyUlQWHujWyq0SEblzziJQdP1s4J3LGHFB7lSt230Fvc+iLs3VzJvDjiCfB
+2M/Q97j2rshJRGp4GvILxU//+QHfkDbeAzCe/NphJoKWl6fIjqtMDIc=
+-----END RSA PRIVATE KEY-----
+

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <guestbook>
+    <entry date="11-06-2020">
+      <country>dk</country>
+      <name>jj</name>
+      <content>ok</content>
+    </entry>
+    <entry date="03-29-2020">
+      <country>denmark</country>
+      <name>Jokke</name>
+      <content>fine site here :)</content>
+    </entry>
+    <entry date="03-29-2020">
+      <country>planet brainus</country>
+      <name>Dr. Membrain</name>
+      <content>
+        Welcome to my site! Here you wil be able to comment on the page, if you so please.
+      </content>
+    </entry>
+  </guestbook>
+</root>

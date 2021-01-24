@@ -1,0 +1,49 @@
+Betingelser og privatlivspolitik
+e-bazar.dk er en side der giver kræmmere og andre selvstændige mulighed får at komme ud med sine produkter. Til dette formål skal der bruges en række informationer, såsom en gyldig e-mail
+til oprettelse af din profil samt dele af adressen på lokationen af varene, såsom postnummer og by.
+Derfor skriver vi denne  meddelelse så det bliver klart hvilke oplysninger det drejer sig om, hvordan de bliver behandlet og hvem der kan se disse.
+Vi behandler dine oplysninger på en sikker og fortrolig måde.
+
+
+Når du opretter en sælger profil
+Når du opretter en sælgerprofil, gemmer vi din e-mailadresse, og hvis du selv vil, dine kontaktoplysninger såsom navn og telefonnummer. Disse informationer kan du tilføje, redigere og fjerne 
+når det passer dig.
+Ved e-mail, telefonnummer, fornavn og efternavn er det muligt at bestemme hvor synlig disse vil være for andre på siden.
+
+
+Når du opretter en køber profil
+Når du opretter en køberprofil, gemmer vi din e-mailadresse, og hvis du vil dit fornavn og efternavn. Disse informationer kan du tilføje, redigere og fjerne når det 
+passer dig.
+Ved e-mail, fornavn og efternavn er det muligt at bestemme hvor synlig disse vil være for andre på siden på siden.
+Disse oplysninger bliver naturligvis brugt til at skabe en så god kundeoplevelse på siden.
+
+
+Sletning af brugerprofil
+For at slette en brugerprofil, bedes du kontakte admin@e-bazar.dk.
+
+
+Når du opretter en bod
+Når du opretter en bod på siden, skal der som minimum bruges postnr og by. Disse kan ses af alle. Vejnavn og nummer er frivilligt.
+
+
+Statistik
+Derudover logger vi, besøgende på siden i form af IP-adresse, samt søgninger(kriterier).
+Dette sker anonymt og gøres for at forbedre vores service og kan ikke henføres til dig.
+
+Cookies
+Når du opretter og logger ind på din profil sættes der en cookie. Cookien bliver kun brugt til Autorisering af brugeren i resten af systemet.
+Desuden bliver der sat en cookie til at holde styr på søgninger og navigation på siden.
+
+
+Datasikkerhed
+Ved oprettelse af ny profil, bliver kryptering benyttet for password.
+
+
+Ansvarsfraskrivelse
+Vi forbeholder os ret til at fjerne oplysninger og profiler i tilfælde af misbrug.
+
+Har du spørgsmål til vores service eller brug for hjælp, er du velkommen til at kontakte os på admin@e-bazar.dk.
+
+
+Med venlig hilsen
+e-bazar.dk

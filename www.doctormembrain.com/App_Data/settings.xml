@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <basic>
+    <setting name="SITE_NAME">www.doctormembrain.dk</setting>
+    <setting name="SITE_NAME_SHORT">doctormembrain.dk</setting>
+    <setting name="SITE_NAME_FULL">https://www.doctormembrain.com</setting>
+    <setting name="SLOGAN">Dr. Membrain Presents..</setting>
+    <setting name="COMMENT">- Excitement, Action romance AND MORE!</setting>
+    <setting name="EMAIL_ADMIN">admin@doctormembrain.com</setting>
+    <setting name="EMAIL_MAIL">mail@doctormembrain.com</setting>
+    <setting name="EMAIL_NO_REPLY">no-reply@doctormembrain.com</setting>
+    <setting name="EMAIL_TEST">test@doctormembrain.com</setting>
+    <setting name="IP">80.161.50.61</setting>
+  </basic>
+</settings>

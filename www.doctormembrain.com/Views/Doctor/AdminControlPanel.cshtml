@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "AdminControlPanel";
+}
+
+<h1 class="classname white" >AdminReset</h1>
+<br />
+<br />
+
+<form action="Doctor/AdminControlPanelPost" method="post" target="_top">
+    <input type="password" name="pwd" id="pwd" />
+    <input type="submit" value="reset" />
+</form>
+<br />
+<span class="xwhite">
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+</span>
+<br />
+@Html.RouteLink("Create Wiki", "create_wiki", null, new string[] { "white" })

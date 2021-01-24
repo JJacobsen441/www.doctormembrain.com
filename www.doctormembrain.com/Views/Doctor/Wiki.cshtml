@@ -1,0 +1,63 @@
+﻿@model www.doctormembrain.com.Models.Wiki
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Wiki";
+}
+
+<div class="row">
+    <div class="col-md-2">
+        <img src="~/media/dr.jpg" style="float:right; max-height:100px;" />
+    </div>
+    <div class="col-md-10">
+        <div class="col-md-12 row">
+            <h1 class="classname white" style="width:60px;">Wiki</h1>
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+            {
+                <a href="/Doctor/CreateWiki?wiki_id=@Model.Id">edit</a>
+            }
+        </div>
+        <br />
+        <br />
+        <div class="col-md-6 removepaddingsides">
+            <h3 class="classname pure_white">
+                @Model.Title
+            </h3>
+            <hr class="white_bdr" />
+        </div>
+        <div class="col-md-6 removepaddingsides">
+            <h5 class="classname white">Intro</h5>
+            <span class="classname white">
+                @Html.Raw(Model.Intro)
+            </span>
+        </div>
+
+        <br />
+        <br />
+        @*<span class="classname white">. - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - </span>
+            <span class="classname white">. - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - </span>
+            <span class="classname white">. - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - .</span>
+            <br />
+            <br />*@
+        @*<h3 class="classname white">Chapters</h3>*@
+        @{
+            foreach (Chapter ch in Model.Chapter)
+            {
+                <div class="col-md-6 removepaddingsides">
+                    <h5 class="classname pure_white bold">
+                        @ch.Title
+                    </h5>
+                    <hr class="white_bdr_dot" />
+                </div>
+                <div class="col-md-6 removepaddingsides">
+                    <span class="classname white">
+                        @Html.Raw(ch.Text)
+                    </span>
+                </div>
+                <br />
+            }
+        }
+    </div>
+</div>

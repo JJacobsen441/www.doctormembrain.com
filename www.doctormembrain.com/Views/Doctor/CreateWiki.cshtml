@@ -1,0 +1,226 @@
+﻿@model www.doctormembrain.com.Models.Wiki
+@{
+    ViewData["Title"] = "CreateWiki";
+}
+
+<h1 class="classname xwhite">CreateWiki</h1>
+
+<div class="row">
+    <div class="col-md-8 ">
+    </div>
+    @*<input type="button" value="Til butik" class="btn btn-default btn_green myfade" onclick="location.href='@Url.RouteUrl("EditShop1", new { shop_id = Model.shop_id })'" />*@
+<div class="col-md-4 ">
+    <a href="@Url.RouteUrl("create_wiki")">create new</a><br />
+    <a href="@Url.RouteUrl("wiki")?wiki_id=@Model.Id">goto</a><br />
+    Select a wiki:&nbsp;&nbsp;&nbsp;
+    <select style="position:absolute;" onfocus='this.size=10;' onblur='this.size=1;' onchange='this.size=1; this.blur();' id="sel_wikis">
+        @{
+                List<Wiki> wikis = ViewBag.Wikis;
+                foreach (Wiki w in wikis.OrderBy(x=>x.Title).ToList())
+                {
+                    //string sel = w.Title == Model.Title ? "selected='selected' " : "";
+            <option value="@w.Id">@w.Title</option>
+                }
+        }
+    </select>
+</div>
+</div>
+<br />
+<br />
+@using (Html.BeginRouteForm("create_wiki_post", FormMethod.Post, @Model))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @Html.HiddenFor(model => @Model.Id, new { @class = "" })
+
+    <h3 class="classname xwhite">Intro</h3>
+    <div class="col-md-8 form-horizontal removepaddingsides">
+        <div class="form-group">
+            <div class="col-md-12 removepaddingsides">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label classname xwhite" })
+            </div>
+            <div class="col-md-12 removepaddingsides">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 form-horizontal removepaddingsides">
+        <div class="form-group">
+            <div class="col-md-12 removepaddingsides">
+                @Html.LabelFor(model => model.Intro, htmlAttributes: new { @class = "control-label classname xwhite" })
+                <span class="classname desc_msg"></span>
+            </div>
+            <div class="col-md-12 removepaddingsides">
+                @Html.TextAreaFor(model => model.Intro, new { @class = "form-control width_full input_intro", rows = "6" })
+                @Html.ValidationMessageFor(model => model.Intro, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 form-horizontal xremovepaddingsides">
+        <div class="row">
+            <input type="submit" class="btn btn-default classname white black_bg" value="Save Wiki" />
+            <input type="text" class="form-control" id="suggestion1" style="width:90px;" />
+            <input type="button" class="btn btn-default classname white black_bg add_link" value="Add Link" onclick="addLink('#suggestion1', '#link1');" />
+            <span class="form-control white black_bg black_bdr" id="link1" style="display:inline;width:auto;"></span>
+        </div>
+    </div>
+}
+<br />
+<br />
+<span class="classname white">. - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - </span>
+<span class="classname white">. - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - </span>
+<span class="classname white">. - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - . - .</span>
+<br />
+<br />
+<h3 class="classname xwhite">Chapters</h3>
+@{
+    int counter = 0;
+    foreach (Chapter ch in Model.Chapter)
+    {
+        @using (Html.BeginRouteForm("edit_chapter_post", FormMethod.Post))
+        {
+            @Html.Hidden("chapter_id", ch.Id, new { @class = "" })
+            <div class="col-md-8 form-horizontal removepaddingsides">
+                <div class="form-group">
+                    <div class="col-md-12 removepaddingsides">
+                        <input id="c_title" name="c_title" type="text" class="form-control classname" value="@ch.Title" />
+                        <span class="classname chap_msg_@counter"></span>
+                        @*@Html.EditorFor(model => ch.Title, new { htmlAttributes = new { @class = "form-control classname" } })*@
+                    </div>
+                    <div class="col-md-12 removepaddingsides">
+                        <textarea id="c_text" name="c_text" class="form-control classname width_full input_chapter_@counter" rows="6" onkeyup="setCount('.input_chapter_@counter', '.chap_msg_@counter', 1000)">@ch.Text</textarea>
+                        @*@Html.TextAreaFor(model => ch.Text, new { @class = "form-control classname width_full", rows = "6" })*@
+                        @*@Html.ValidationMessageFor(model => ch.Text, "", new { @class = "text-danger" })*@
+                        <a class="classname xwhite" href="@Url.RouteUrl("move_chapter", new { chapter_id = ch.Id, dir = "up" } )">move up</a> | 
+                        <a class="classname xwhite" href="@Url.RouteUrl("move_chapter", new { chapter_id = ch.Id, dir = "down" } )">move down</a> | 
+                        <a class="classname xwhite" href="@Url.RouteUrl("remove_chapter")?chapter_id=@ch.Id">remove</a><br />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 form-horizontal xremovepaddingsides">
+                <div class="row">
+                    <input type="submit" class="btn btn-default classname white black_bg" value="Edit Chapter" />
+                    <input type="text" class="form-control" id="suggestion2_@counter" style="width:90px;" />
+                    <input type="button" class="btn btn-default classname white black_bg add_link" value="Add Link" onclick="addLink('#suggestion2_@counter', '#link2_@counter');" />
+                    <span class="form-control white black_bg black_bdr" id="link2_@counter" style="display:inline;width:auto;"></span>
+                </div>
+            </div>
+            <br />
+            <br />
+        }
+        counter++;
+    }
+}
+
+@{
+    //Chapter c = new Chapter();
+    //int wiki_id;
+    @using (Html.BeginRouteForm("add_chapter_post", FormMethod.Post))
+    {
+    @Html.Hidden("wiki_id", @Model.Id, new { @class = "" })
+    <div class="col-md-8 form-horizontal removepaddingsides">
+        <div class="form-group">
+            <div class="col-md-12 removepaddingsides">
+                @Html.Label("title", "Title", htmlAttributes: new { @class = "control-label classname xwhite" })
+            </div>
+            <div class="col-md-12 removepaddingsides">
+                <input id="c_title" name="c_title" type="text" class="form-control classname" />
+                @*@Html.Editor("title", new { value = "", @class = "form-control classname white" })*@
+                @*@Html.ValidationMessageFor(model => c.Title, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 form-horizontal removepaddingsides">
+        <div class="form-group">
+            <div class="col-md-12 removepaddingsides">
+                @Html.Label("text", "Text", htmlAttributes: new { @class = "control-label classname xwhite" })
+                <span class="classname chap_msg"></span>
+            </div>
+            <div class="col-md-12 removepaddingsides">
+                @Html.TextArea("c_text", new { @class = "form-control classname width_full input_chapter", rows = "6" })
+                @*@Html.ValidationMessageFor(model => c.Text, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 form-horizontal xremovepaddingsides">
+        <div class="row">
+            <input type="submit" class="btn btn-default classname white black_bg" value="Add Chapter" />
+            <input type="text" class="form-control" id="suggestion3" style="width:90px;" />
+            <input type="button" class="btn btn-default classname white black_bg add_link" value="Add Link" onclick="addLink('#suggestion3', '#link3');" />
+            <span class="form-control white black_bg black_bdr" id="link3" style="display:inline;width:auto;"></span>
+        </div>
+    </div>
+    }
+}
+
+<script>
+    $(document).ready(function () {
+        setupSelect();
+        setCount('.input_intro', '.desc_msg', 300);
+        setCount('.input_chapter', '.chap_msg', 1000);
+
+        $('.input_intro').keyup(function () {
+            setCount('.input_intro', '.desc_msg', 300);
+        });
+        $('.input_chapter').keyup(function () {
+            setCount('.input_chapter', '.chap_msg', 1000);
+        });
+        $('#sel_wikis').change(function () {
+            //alert('hep');
+            var id = $('#sel_wikis').val();
+            window.location.href = '@Url.RouteUrl("create_wiki")?wiki_id=' + id;
+        });
+    });
+    function setupSelect()
+    {
+        $("#sel_wikis option[value=@Model.Id]").attr('selected', 'selected');
+    }
+    function setCount(elem_root, elem_show, count) {
+        var str = $(elem_root).val();
+        var res = count - str.length;
+        if (res >= 0)
+            $(elem_show).text(', tilbage: ' + res);
+        else {
+            $(elem_root).val(str.substring(0, count));
+            $(elem_show).text(', overskredet: ' + (res * -1));
+        }
+    }
+    function addLink(elem1, elem2) {
+
+        var su = $(elem1).val();
+        var path = "/Doctor/AddLink";
+        var data = {};
+        data.suggestion = su;
+
+        if (data.suggestion != '')
+            addLink_Ajax(path, data, elem2);
+        else
+            alert('Udfyld venligst.');
+    }
+    function addLink_Ajax(path, data_in, elem) {
+        var data = data_in;//JSON.stringify(data_in);
+        $.ajax({
+            url: path,
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded",//"application/json; charset=utf-8",
+            dataType: "json",
+            data: data,
+            success: function (results) {
+                if (results.success) {
+                    //alert('hep');
+                    //var res = '<a href="@Url.RouteUrl("wiki")?wiki_id=' + results.id + '">' + results.title + '</a>';
+                    var res = 'tag?1' + results.id + '?2' + results.title + '?3';
+                    $(elem).text(res);
+                }
+                else
+                    myalert('Der skete en fejl, beklager.');
+            },
+            error: function (er) {
+                myalert("error: " + er);
+            }
+        });
+    }
+</script>

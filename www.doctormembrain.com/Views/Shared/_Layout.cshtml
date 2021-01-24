@@ -1,0 +1,113 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="canonical" href="https://www.doctormembrain.com/" />
+
+    @*<title>@ViewData["Title"] - www.doctormembrain.com</title>*@
+    <title>Dr. Membrain presents..</title>
+    <meta name="description" content="Tune in for an evening with short stories, sci-fi and OUTER SPACE romance." />
+    <meta name="keywords" content="wiki, love, romance, science, fiction, entertainment, humour, funny, membrain" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/MySite.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+</head>
+@{
+    string body_bg = "";
+    if ((string)ViewData["Title"] == "Register" || (string)ViewData["Title"] == "Log in" || (string)ViewData["Title"] == "CreateWiki" || (string)ViewData["Title"] == "AdminControlPanel")
+    {
+        body_bg = "white";
+    }
+    else
+    {
+        body_bg = "black";
+    }
+}
+<body style="background-color:@body_bg">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light xbg-white xborder-bottom box-shadow mb-3">
+            <div class="container">
+                <div class="container" align="center">
+                    <a style="font-size:25px;color:#A4A4A4;" class="classname navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">www.doctormembrain.com</a>
+                    @*<button style="background-color:#FFFFFF;" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>*@
+                    @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                </li>
+                            </ul>
+                        </div>*@
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <main role="main" class="pb-3" style="background-color:@body_bg">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="xborder-top footer text-muted">
+        <div class="classname container" style="font-size:25px;color:#A4A4A4;">
+            <div align="center">
+                <div class="mycontainer hide_phone" style="width:700px" align="left">
+                    &copy; @DateTime.Now.Year - www.doctormembrain.com
+                    | Presented by <a class="classname" style="color: #FFFFFF;" href="https://www.gikware.com">gikware.com</a>
+                    | Follow us on <a class="classname" style="color: #FFFFFF;" href="https://www.facebook.com/doctormembrain">Facebook</a>
+                </div>
+                <div class="mycontainer hide_only_phone" style="xwidth:700px" align="left">
+                    Follow us on <a class="classname" style="color: #FFFFFF;" href="https://www.facebook.com/doctormembrain">Facebook</a><br />
+                    Presented by <a class="classname" style="color: #FFFFFF;" href="https://www.gikware.com">gikware.com</a><br />
+                    &copy; @DateTime.Now.Year - www.doctormembrain.com
+                </div>
+            </div>
+        </div>
+    </footer>
+    @if (SignInManager.IsSignedIn(User))
+    {
+    <div class="" style="position: absolute; bottom: 5px; left: 5px;">
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.RouteUrl("Arcade", new { area = "" })">
+            <button type="submit" class="" style="color: black;">Log ud</button>
+        </form>
+    </div>
+    }
+    else
+    {
+    <div class="" style="position:absolute; bottom:5px;left:5px;">
+        <span class="" style="">
+            <a class="" style="color: black;" asp-area="Identity" asp-page="/Account/Register">Registrer</a>
+        </span>
+
+        <span class="" style="">
+            @{
+                    var data = new Dictionary<string, string>
+                        {
+                        { "returnUrl", "/administration/rediger-profil" }
+                    };
+            }
+            <a class="" style="color: black;" asp-area="Identity" asp-page="/Account/Login" xasp-all-route-data="">Log ind</a>
+        </span>
+    </div>
+    }
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
