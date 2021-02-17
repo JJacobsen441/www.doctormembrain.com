@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <settings>
   <basic>
-    <setting name="SITE_NAME">www.doctormembrain.dk</setting>
-    <setting name="SITE_NAME_SHORT">doctormembrain.dk</setting>
+    <setting name="SITE_NAME">www.doctormembrain.com</setting>
+    <setting name="SITE_NAME_SHORT">doctormembrain.com</setting>
     <setting name="SITE_NAME_FULL">https://www.doctormembrain.com</setting>
     <setting name="SLOGAN">Dr. Membrain Presents..</setting>
     <setting name="COMMENT">- Excitement, Action romance AND MORE!</setting>

@@ -410,7 +410,7 @@ namespace www.doctormembrain.com.Controllers
             try
             {
                 if (!IsValidEntry(date, country, name, content))
-                    throw new Exception();
+                    return RedirectToAction("GuestBook", "Doctor");
 
                 bool ok;
                 DateTime res_date;
@@ -491,9 +491,9 @@ namespace www.doctormembrain.com.Controllers
                 DateTimeStyles styles = DateTimeStyles.None;
          
                 ok1 = DateTime.TryParse(date, culture, styles, out res_date);
-                StringHelper.OnlyAlphanumeric(country, true, true, "", new char[0], out ok2);
-                StringHelper.OnlyAlphanumeric(name, true, true, "", new char[0], out ok3);
-                StringHelper.OnlyAlphanumeric(content, true, true, "", new char[] { ' ', '.', ',', ':', ';', '-', '(', ')', '?', '!', '\"', '\'' }, out ok4);
+                StringHelper.OnlyAlphanumeric(country, true, true, "br", Characters.Name(), out ok2);
+                StringHelper.OnlyAlphanumeric(name, true, true, "br", Characters.Name(), out ok3);
+                StringHelper.OnlyAlphanumeric(content, true, true, "br", Characters.All(true), out ok4);
                 if (!(ok1 && ok2 && ok3 && ok4))
                     return NotValid(date, country, name, content);
             

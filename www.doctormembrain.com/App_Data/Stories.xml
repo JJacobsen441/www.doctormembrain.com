@@ -1,7 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
   <stories>
-    <storie no="68" feature="true" love="false" top="false">
+    <storie no="71" feature="true" love="false" top="false">
+      <header>Playing now!</header>
+      <headline>The Strangeness From Space</headline>
+      <content>
+        On an otherwise normal tuesday at 11.13, suddenly the inhabitants of the planet Earth, all thought to themselves "what a strange day this is". Tune in for more STRANGENESS!
+      </content>
+    </storie>
+    <storie no="70" feature="false" love="false" top="false">
+      <header>Coming soon!</header>
+      <headline>The Indifferrence Engine</headline>
+      <content>
+        After plotting in all the calculations, Sir Real soon finds out the results are all the same. Tune in to learn more about the "Indifference Engine"!
+      </content>
+    </storie>
+    <storie no="69" feature="false" love="false" top="false">
+      <header>In theaters now!</header>
+      <headline>The Ortega Nebula</headline>
+      <content>
+        Only a few select space travellers, such as Mr. McNeato had dared to enter this region of space. But the adventures they experienced here were all logged under "classified, code needtoknow". Tune in to find out more!
+      </content>
+    </storie>
+    <storie no="68" feature="false" love="false" top="false">
       <header>Playing this holiday!</header>
       <headline>Mary Christmas Goes To Planet X-MS20</headline>
       <content>

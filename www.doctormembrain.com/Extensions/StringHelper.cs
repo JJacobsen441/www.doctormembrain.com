@@ -133,6 +133,7 @@ namespace www.doctormembrain.com.Extensions
             }
             //str = str.Replace("<", "");
             //str = str.Replace(">", "");
+            string tmp = str;
             for (int i = 0; i < str.Length; i++)
             {
                 if(allow_tag != "")
@@ -163,6 +164,7 @@ namespace www.doctormembrain.com.Extensions
                                  
                 }
             }
+            ok = str == tmp;
             return str;
         }
         public static bool IsValidEmail(string email)
