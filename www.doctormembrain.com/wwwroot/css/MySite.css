@@ -10,7 +10,7 @@
 }
 .menu {
     width: 200px;
-    padding-top: 105px;
+    padding-top: 140px;
     float: left;
 }
 .menu-item {
@@ -39,7 +39,7 @@
     right: 0;
     xwidth: 600px;
     z-index: 1;
-    padding-top: 120px;
+    padding-top: 140px;
     xpadding-left: 100px;
     padding-right: 40px;
 }
@@ -232,6 +232,10 @@
 }
 
 @media only screen and (max-width: 760px) {
+    .navbar-brand
+    {
+        padding-left:0px !important;
+    }
     #some-element {
         display: none;
     }
@@ -263,7 +267,7 @@
         right: 0;
         xwidth: 600px;
         z-index: 1;
-        padding-top: 5px;
+        padding-top: 75px;
         xpadding-left: 100px;
         padding-right: 15px;
     }
@@ -374,7 +378,7 @@
 
     .myoverlay {
         position: absolute;
-        top: 0;
+        top: 30px;
         left: 0;
         xwidth: 600px;
         z-index: 1;

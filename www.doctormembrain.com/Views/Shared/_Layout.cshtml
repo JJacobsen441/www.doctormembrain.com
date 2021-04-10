@@ -37,8 +37,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light xbg-white xborder-bottom box-shadow mb-3">
             <div class="container">
-                <div class="container" align="center">
-                    <a style="font-size:25px;color:#A4A4A4;" class="classname navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">www.doctormembrain.com</a>
+                <div class="col-md-3"></div>
+                <div class="col-md-8" align="">
+                    <a style="padding-left:150px;font-size:25px;color:#A4A4A4;" class="classname navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">www.doctormembrain.com</a>
                     @*<button style="background-color:#FFFFFF;" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -59,21 +60,21 @@
     </header>
     
     <div class="container">
-        <main role="main" class="pb-3" style="background-color:@body_bg">
+        @*<main role="main" class="pb-3" style="background-color:@body_bg">*@
             @RenderBody()
-        </main>
+        @*</main>*@
     </div>
     <footer class="xborder-top footer text-muted">
         <div class="classname container" style="font-size:25px;color:#A4A4A4;">
             <div align="center">
-                <div class="mycontainer hide_phone" style="width:700px" align="left">
+                <div class="mycontainer hide_phone" style="padding-left:100px;width:700px" align="left">
                     &copy; @DateTime.Now.Year - www.doctormembrain.com
                     | Presented by <a class="classname" style="color: #FFFFFF;" href="https://www.gikware.com">gikware.com</a>
                     | Follow us on <a class="classname" style="color: #FFFFFF;" href="https://www.facebook.com/doctormembrain">Facebook</a>
                 </div>
                 <div class="mycontainer hide_only_phone" style="xwidth:700px" align="left">
-                    Follow us on <a class="classname" style="color: #FFFFFF;" href="https://www.facebook.com/doctormembrain">Facebook</a><br />
-                    Presented by <a class="classname" style="color: #FFFFFF;" href="https://www.gikware.com">gikware.com</a><br />
+                    @*Follow us on <a class="classname" style="color: #FFFFFF;" href="https://www.facebook.com/doctormembrain">Facebook</a><br />
+                    Presented by <a class="classname" style="color: #FFFFFF;" href="https://www.gikware.com">gikware.com</a><br />*@
                     &copy; @DateTime.Now.Year - www.doctormembrain.com
                 </div>
             </div>

@@ -5,11 +5,10 @@
 
 @*<h1>Index</h1>*@
 
-<div align="center">
-    @*<div class="row">*@
-        <div class="xcol-md-2 hide_phone menu">
-            <ul class="xnavbar-nav xflex-grow-1 xmenu" style="list-style: none;">
-                @*<li><img src="~/media/top.jpg" style="padding-right:10px;padding-bottom:10px;width:100%" height="40" /></li>*@
+@*<div class="container" align="center">*@
+    <div class="row">
+        <div class="col-md-3 hide_phone menu">
+            <ul class="" style="width:100%;list-style: none;">
                 <li class="xnav-item"><input type="button" style="border-color:#A4A4A4;margin-bottom:5px;" class="classname btn-nav btn-feat menu-item" value="Feature"></li>
                 <li class="xnav-item"><input type="button" style="border-color:#A4A4A4;margin-bottom:5px;" class="classname btn-nav btn-love menu-item" value="Love Classics"></li>
                 <li class="xnav-item"><input type="button" style="border-color:#A4A4A4;margin-bottom:5px;" class="classname btn-nav btn-top menu-item" value="Top 5"></li>
@@ -17,17 +16,16 @@
                 <li class="xnav-item"></li>
                 <li class="xnav-item"><input type="button" class="classname btn-nav btn-about menu-item btn" style="background-color: #000000" value="About"></li>
             </ul>
-            <img src="~/media/dr.jpg" style="padding-right: 10px; padding-top: 95px; width: 80%" xheight="40" />
+            <img src="~/media/dr.jpg" style="padding-left: 40px; padding-top: 130px; width: 70%" xheight="40" />
         </div>
-        @*<div style="width:850px">*@
-        <div class="container mycontainer removepaddingsides_phone">
+        <div class="col-md-8 removepaddingsides_phone">
             <hr style="border-top: 1px dashed gray;" />
-            <div class="classname xmyoverlay reel xhide_phone"></div>
+            <div class="classname reel xhide_phone"></div>
             <div class="frame-top" style="padding-bottom:5px">
                 <img src="~/media/top.jpg" style="height:100%;width:100%;" />
             </div>
             <div class="vid_div">
-                <video style="width:100%;" class="video1" muted autoplay>
+                <video style="width:100%;" class="video1" muted autoplay playsinline>
                     <source src="~/media/From5.mp4" type="video/mp4" />
                 </video>
                 <video style="width:100%;" class="video2" muted autoplay loop>
@@ -36,7 +34,7 @@
             </div>
             <div class="myoverlay">
 
-                <div class="header" style="xpadding-top:170px;">
+                <div class="header" style="">
                     <span class="classname letter1"></span>
                     <div align="left" class="classname header-content"></div>
                 </div><br />
@@ -117,10 +115,11 @@
             <input type="button" class="classname btn-nav btn-donate menu-item btn hide_only_phone floatright_phone" style="background-color: #000000" value="Donate">
             @*<input type="button" class="classname btn hide_only_phone" style="font-size:25px;color:#A4A4A4;" value="Donation">*@
 
-            @*</div>*@
-            @*</div>*@
+            @*</div>
+            </div>*@
         </div>
     </div>
+@*</div>*@
 <script type="text/javascript">
     var genre = 'feature';
     $(document).ready(function () {
